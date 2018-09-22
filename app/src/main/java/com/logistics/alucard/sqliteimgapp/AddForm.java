@@ -25,7 +25,7 @@ public class AddForm extends AppCompatActivity {
 
     final int REQUEST_CODE_GALLERY = 1234;
     DatabaseHelper mDatabaseHelper;
-    Button btnadd, btnchoose;
+    Button btnadd, btnchoose, btNext;
     ImageView myImg;
     EditText editText;
     @Override
@@ -35,6 +35,7 @@ public class AddForm extends AppCompatActivity {
         setContentView(R.layout.activity_add_form);
         btnadd = (Button) findViewById(R.id.btnadd);
         btnchoose = (Button) findViewById(R.id.btn_choose);
+        btNext = findViewById(R.id.btNext);
         myImg = findViewById(R.id.imageView);
         editText = (EditText) findViewById(R.id.addText);
         mDatabaseHelper= new DatabaseHelper(this);
@@ -66,6 +67,15 @@ public class AddForm extends AppCompatActivity {
             }
 
 
+        });
+
+        btNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent next = new Intent(getApplicationContext(), TestActivity.class);
+                startActivity(next);
+                //other new cool stuff
+            }
         });
     }
 
